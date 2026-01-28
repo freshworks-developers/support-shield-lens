@@ -1,0 +1,41 @@
+{
+  "bigcommerce_store_hash": {
+    "type": "text",
+    "display_name": "BigCommerce Store Hash",
+    "required": true
+  },
+    "bigcommerce_ClientScret_hash": {
+    "type": "text",
+    "display_name": "BigCommerce Client Secret key",
+    "required": true
+  },
+  "bigcommerce_access_token": {
+  "type": "text",
+  "display_name": "BigCommerce Access Token",
+  "required": true,
+  "secure": true
+},
+  "bigcommerce_client_id": {
+    "type": "text",
+    "display_name": "BigCommerce Client ID",
+    "required": true
+  },
+  "paypal_client_id": {
+    "type": "text",
+    "display_name": "PayPal Client ID",
+    "required": true
+  },
+  "paypal_client_secret": {
+    "type": "text",
+    "display_name": "PayPal Client Secret",
+    "required": true,
+    "secure": true
+  },
+  "paypal_mode": {
+    "type": "dropdown",
+    "display_name": "PayPal Mode",
+    "required": true,
+    "options": ["sandbox", "live"],
+    "default_value": "sandbox"
+  }
+}

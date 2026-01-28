@@ -1,0 +1,71 @@
+{
+"bigCommerceFindCustomerByEmail": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "api.bigcommerce.com",
+      "path": "/stores/<%= iparam.bigcommerce_store_hash %>/v3/customers",
+      "headers": {
+        "X-Auth-Token": "<%= iparam.bigcommerce_access_token %>",
+        "X-Auth-Client": "<%= iparam.bigcommerce_client_id %>",
+        "Accept": "application/json"
+      },
+      "query": {
+        "email:in": "<%= context.email %>",
+        "limit": 1
+      }
+    }
+  },
+
+  "bigCommerceGetOrdersByCustId": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "api.bigcommerce.com",
+      "path": "/stores/<%= iparam.bigcommerce_store_hash %>/v2/orders",
+      "headers": {
+        "X-Auth-Token": "<%= iparam.bigcommerce_access_token %>",
+        "X-Auth-Client": "<%= iparam.bigcommerce_client_id %>",
+        "Accept": "application/json"
+      },
+      "query": {
+        "customer_id": "<%= context.customer_id %>",
+        "limit": 3,
+        "sort": "date_created:desc"
+      }
+    }
+  },
+
+  "payPalGetAccessToken": {
+    "schema": {
+      "protocol": "https",
+      "method": "POST",
+      "host": "<%= context.paypal_host %>",
+      "path": "/v1/oauth2/token",
+      "headers": {
+        "Authorization": "Basic <%= context.paypal_basic %>",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json"
+      }
+    }
+  },
+
+  "payPalListTransactions": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "<%= context.paypal_host %>",
+      "path": "/v1/reporting/transactions",
+      "headers": {
+        "Authorization": "Bearer <%= context.paypal_access_token %>",
+        "Accept": "application/json"
+      },
+      "query": {
+        "start_date": "<%= context.start_date %>",
+        "end_date": "<%= context.end_date %>",
+        "fields": "all",
+        "page_size": 50
+      }
+    }
+  }
+}

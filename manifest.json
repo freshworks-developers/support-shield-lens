@@ -1,0 +1,47 @@
+{
+  "platform-version": "3.0",
+  "modules": {
+    "common": {
+      "requests": {
+        "bigCommerceFindCustomerByEmail": {},
+        "bigCommerceGetOrdersByCustId": {},
+        "payPalGetAccessToken": {},
+        "payPalListTransactions": {}
+      },
+      "functions": {
+        "getSupportShieldLens": {
+          "timeout": 20
+        },
+        "onTicketCreateHandler": {
+          "timeout": 10
+        },
+        "onTicketUpdateHandler": {
+          "timeout": 10
+        }
+      }
+    },
+    "support_ticket": {
+      "location": {
+        "ticket_sidebar": {
+          "url": "index.html",
+          "icon": "styles/images/icon.svg"
+        }
+      },
+      "events": {
+        "onTicketCreate": {
+          "handler": "onTicketCreateHandler"
+        },
+        "onTicketUpdate": {
+          "handler": "onTicketUpdateHandler"
+        }
+      }
+    }
+  },
+  "engines": {
+    "node": "18.20.5",
+    "fdk": "9.7.4"
+  },
+  "app": {
+    "tracking_id": "supportshield_v3_multi_oauth"
+  }
+}

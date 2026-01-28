@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <fw-label value="Support Shield" color="blue"></fw-label>
+        <div class="status" id="status">Loading...</div>
+      </div>
+
+      <fw-tabs>
+        <fw-tab slot="tab" panel="orders" name="Orders"></fw-tab>
+        <fw-tab slot="tab" panel="payments" name="Payments"></fw-tab>
+
+        <fw-tab-panel id="orders" name="orders">
+          <div id="ordersWrap" class="content"></div>
+        </fw-tab-panel>
+
+        <fw-tab-panel id="payments" name="payments">
+          <div id="paymentsWrap" class="content"></div>
+        </fw-tab-panel>
+      </fw-tabs>
+    </div>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
