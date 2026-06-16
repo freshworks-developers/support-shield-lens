@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="support-shield-lens.png" alt="Support Shield Lens ticket sidebar sample app" width="100%" />
+</p>
+
 # Support Shield Lens: Multi-OAuth Integration: BigCommerce & PayPal
 =============================================
 
